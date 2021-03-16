@@ -640,8 +640,8 @@ ggplot(aes(x = reorder(Model,-Recall),y = Recall),data = model_compare_recall) +
   ggtitle('Comparative Recall of Models on Test Data') +
   xlab('Models')  +
   ylab('Recall Measure')+
-  geom_text(aes(label = round(Recall,2)))+
-  theme(axis.text.x = element_text(angle = 40)) + theme_bw()
+  geom_text(aes(label = round(Recall,2))) + theme_bw() + 
+  theme(axis.text.x = element_text(angle = 40))
 
 #Compare the Precision of the models: TP/TP+FP 
 model_compare_precision <- data.frame(Model = c('DT-Orig',
@@ -674,9 +674,8 @@ ggplot(aes(x = reorder(Model,-Precision),y = Precision),data = model_compare_pre
   ggtitle('Comparative Precision of Models on Test Data') +
   xlab('Models')  +
   ylab('Precision Measure')+
-  geom_text(aes(label = round(Precision,2)))+
-  theme(axis.text.x = element_text(angle = 40)) + theme_bw()
-
+  geom_text(aes(label = round(Precision,2))) + theme_bw() + 
+  theme(axis.text.x = element_text(angle = 40))
 
 #Compare the F1 of the models: 2*((Precision*Recall) / (Precision + Recall)) 
 
@@ -710,8 +709,8 @@ ggplot(aes(x=reorder(Model,-F1),y = F1),data = model_compare_f1) +
   ggtitle('Comparative F1 of Models on Test Data') +
   xlab('Models')  +
   ylab('F1 Measure')+
-  geom_text(aes(label = round(F1,2)))+
-  theme(axis.text.x = element_text(angle = 40)) + theme_bw()
+  geom_text(aes(label = round(F1,2))) + theme_bw() + 
+  theme(axis.text.x = element_text(angle = 40))
 
 ```
 
